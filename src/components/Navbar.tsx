@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { useScrollSpy } from "../hooks/useScrollSpy"
 import { personal } from "../data/profile"
+import { JarvisOrb } from "../jarvis/JarvisOrb"
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
@@ -64,6 +65,9 @@ export function Navbar() {
               </button>
             </li>
           ))}
+          <li className="flex items-center pl-1">
+            <JarvisOrb />
+          </li>
         </ul>
 
         <button
@@ -92,6 +96,10 @@ export function Navbar() {
                 </button>
               </li>
             ))}
+            <li className="flex items-center pl-1 pt-1">
+              <JarvisOrb />
+              <span className="ml-2 text-xs text-[var(--color-text-dim)]">Activate system panel</span>
+            </li>
           </ul>
         </div>
       )}

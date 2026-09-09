@@ -1,5 +1,5 @@
 import { type FormEvent, useState } from "react"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { AlertCircle, CheckCircle2, Loader2, Mail, MapPin, Phone, Send } from "lucide-react"
 import { SectionHeading } from "../components/SectionHeading"
 import { SectionBackground } from "../components/SectionBackground"
 import { SectionDivider } from "../components/SectionDivider"
@@ -7,16 +7,43 @@ import { Reveal } from "../components/Reveal"
 import { LinkedinIcon } from "../components/icons"
 import { personal } from "../data/profile"
 
+type Status = "idle" | "sending" | "sent" | "error"
+
 export function Contact() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [status, setStatus] = useState<Status>("idle")
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "a visitor"}`)
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`)
-    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`
+    setStatus("sending")
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: personal.web3formsKey,
+          subject: `Portfolio inquiry from ${name || "a visitor"}`,
+          name,
+          email,
+          message,
+        }),
+      })
+      const data = await res.json()
+
+      if (data.success) {
+        setStatus("sent")
+        setName("")
+        setEmail("")
+        setMessage("")
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
   }
 
   return (
@@ -118,12 +145,35 @@ export function Contact() {
                   placeholder="What are you building?"
                 />
               </div>
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-lg bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5 hover:bg-cyan-300"
-              >
-                Send Message <Send size={15} />
-              </button>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center gap-2 rounded-lg bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5 hover:bg-cyan-300 disabled:opacity-60 disabled:hover:translate-y-0"
+                >
+                  {status === "sending" ? (
+                    <>
+                      Sending <Loader2 size={15} className="animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message <Send size={15} />
+                    </>
+                  )}
+                </button>
+
+                {status === "sent" && (
+                  <span className="inline-flex items-center gap-1.5 text-sm text-green-400">
+                    <CheckCircle2 size={16} /> Message sent — I'll get back to you soon.
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="inline-flex items-center gap-1.5 text-sm text-red-400">
+                    <AlertCircle size={16} /> Something went wrong — please email me directly.
+                  </span>
+                )}
+              </div>
             </form>
           </Reveal>
         </div>

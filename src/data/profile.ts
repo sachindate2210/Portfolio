@@ -18,6 +18,8 @@ export const personal = {
   openTo: "Full-time opportunities · Nagpur (On-site / Hybrid / Remote)",
   // Public Skilljar profile — fallback link for any certification without its own direct URL.
   skilljarProfile: "https://anthropic.skilljar.com/accounts/profile/?next=/",
+  // Web3Forms access key — public by design (client-side form delivery), tied to sachindate2210@gmail.com.
+  web3formsKey: "ab54795f-4b2d-444f-ad95-c1004fa129b3",
 }
 
 export const heroIntro =
