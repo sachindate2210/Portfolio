@@ -1,6 +1,6 @@
 /**
  * Central content file for the portfolio.
- * All data here is sourced directly from Sunil's LinkedIn profile (exported PDF, Sep 2026).
+ * All data here is kept in sync with Sunil's resume (Nov 2026) and LinkedIn profile.
  * Nothing is fabricated — sections with no verified source content are left as
  * clearly-marked placeholders (see PLACEHOLDER_* flags) so they're easy to fill in later
  * without touching any component code.
@@ -8,8 +8,8 @@
 
 export const personal = {
   name: "Sunil Date",
-  headline: "AI Engineer | AI/ML Developer | Python, LLMs & Automation | Ex-PHP/Laravel Developer",
-  shortTitle: "AI Engineer & Python Developer",
+  headline: "AI Engineer | Generative AI & Agentic AI | Full Stack Developer | Software Developer",
+  shortTitle: "AI Engineer & Full Stack Developer",
   location: "Nagpur, Maharashtra, India",
   email: "sachindate2210@gmail.com",
   phone: "+91 91587 79066",
@@ -23,18 +23,18 @@ export const personal = {
 }
 
 export const heroIntro =
-  "AI Engineer building intelligent, automation-driven systems with Python — from LLM-powered features and AI agents to production automation pipelines, backed by a full-stack engineering foundation."
+  "AI Engineer building production-grade LLM applications with Python — multi-agent systems with LangGraph, RAG pipelines, text-to-SQL chatbots and LLM automation workflows, backed by a full-stack engineering foundation."
 
 export const aboutSummary = [
-  "AI Engineer with a background in full-stack web development, now focused on building intelligent, automation-driven solutions using Python. Over the past two years, I've transitioned from traditional web development (PHP/Laravel) into AI/ML engineering — working with Python, machine learning frameworks, LLM integrations, and automation pipelines.",
-  "I enjoy solving real-world problems by combining solid software engineering fundamentals with modern AI capabilities — moving from years of shipping production web applications to building the intelligent systems that are reshaping how software gets built.",
+  "Generative AI Engineer and Python Developer with 4+ years of software development experience at Valethi Technologies, including 3+ years (since Aug 2023) designing, building and deploying production-grade LLM applications for client businesses.",
+  "I build multi-agent systems with LangGraph and LangChain, Retrieval-Augmented Generation (RAG) pipelines on ChromaDB, text-to-SQL chatbots over business databases and LLM automation workflows — served through FastAPI, Django and Flask REST APIs with React frontends, and traced with LangSmith.",
 ]
 
 export const coreStrengths = [
-  "Python development for AI/ML applications and backend systems",
-  "Building and integrating LLM-powered features and AI agents",
-  "Automation of workflows and data pipelines",
-  "Strong full-stack foundation (PHP, Laravel, HTML5, JSON, MySQL/MongoDB) from earlier engineering work",
+  "Multi-agent and agentic AI systems with LangGraph, LangChain and tool calling",
+  "Retrieval-Augmented Generation (RAG) and text-to-SQL applications over client data",
+  "Python REST APIs with FastAPI, Django and Flask, backed by PostgreSQL, MySQL and MongoDB",
+  "Full-stack delivery with React and Streamlit frontends, plus third-party API integration",
 ]
 
 export const engineeringPhilosophy = [
@@ -62,28 +62,41 @@ export type SkillCategory = {
   skills: string[]
 }
 
-// Strictly limited to skills/technologies stated on the LinkedIn profile
-// (Top Skills list + technologies named in the Experience/Summary sections).
+// Kept in sync with the Technical Skills section of the resume.
 export const skillCategories: SkillCategory[] = [
   {
-    title: "AI / Generative AI",
-    description: "LLM-powered features, agents, and language understanding",
-    skills: ["Large Language Models (LLM)", "Natural Language Processing (NLP)", "AI Agents", "LLM Integration", "Claude"],
+    title: "Generative AI & LLMs",
+    description: "LLM applications, agents and retrieval",
+    skills: [
+      "Large Language Models (LLMs)",
+      "Agentic AI",
+      "Multi-Agent Systems",
+      "Tool Calling",
+      "Retrieval-Augmented Generation (RAG)",
+      "Text-to-SQL",
+      "Prompt Engineering",
+      "Structured Outputs",
+    ],
   },
   {
-    title: "Backend / Automation",
-    description: "Python-based systems and workflow automation",
-    skills: ["Python", "Workflow Automation", "Data Pipelines", "JSON"],
+    title: "AI Frameworks & Platforms",
+    description: "Frameworks, model APIs and observability",
+    skills: ["LangChain", "LangGraph", "LangSmith", "OpenAI API", "Anthropic Claude API", "Hugging Face", "Ollama", "ChromaDB"],
   },
   {
-    title: "Frontend",
-    description: "Interactive UI development",
-    skills: ["React.js", "HTML5"],
+    title: "Backend & Databases",
+    description: "Python APIs and data storage",
+    skills: ["Python", "FastAPI", "Django", "Flask", "REST APIs", "PostgreSQL", "MySQL", "MongoDB", "SQL"],
   },
   {
-    title: "Full-Stack Web (Prior Experience)",
-    description: "Production web applications built earlier in my career",
-    skills: ["PHP", "Laravel", "MySQL", "MongoDB", "OpenCart"],
+    title: "Frontend & Tools",
+    description: "Interfaces and engineering workflow",
+    skills: ["React", "Streamlit", "JavaScript", "HTML5", "CSS3", "Git", "Claude Code"],
+  },
+  {
+    title: "Web Development (2022 – 2023)",
+    description: "PHP web applications and e-commerce from the Software Developer role",
+    skills: ["PHP", "Laravel", "OpenCart"],
   },
 ]
 
@@ -108,23 +121,25 @@ export const experience: ExperienceEntry[] = [
     period: "August 2022 — Present",
     roles: [
       {
-        title: "AI Engineer | Python Developer",
-        period: "2024 — Present",
+        title: "AI Engineer / Python Developer",
+        period: "August 2023 — Present",
         bullets: [
-          "Transitioned into an AI Engineer / Python Developer role, focused on building Python-based intelligent systems.",
-          "Integrating LLM-powered features into applications and workflows.",
-          "Developing automation pipelines to streamline repetitive engineering and data tasks.",
+          "Design, build and deploy production-grade Generative AI applications for client businesses using Python, LangChain, LangGraph and the OpenAI and Anthropic Claude APIs.",
+          "Build agentic and multi-agent workflows that plan multi-step tasks and connect LLMs to external tools, APIs and databases through tool calling.",
+          "Built RAG pipelines on ChromaDB and text-to-SQL chatbots that let business users query company data in plain English.",
+          "Expose AI features through FastAPI, Django and Flask REST APIs with React and Streamlit interfaces; trace and debug agent runs with LangSmith.",
         ],
-        tech: ["Python", "LLMs", "NLP", "AI Agents", "Automation"],
+        tech: ["Python", "LangGraph", "LangChain", "LangSmith", "OpenAI API", "Claude API", "ChromaDB", "FastAPI", "React"],
       },
       {
-        title: "PHP / Laravel Developer",
-        period: "August 2022 — 2024",
+        title: "Software Developer",
+        period: "August 2022 — July 2023",
         bullets: [
-          "Built and maintained web applications using PHP and Laravel.",
-          "Worked across the stack with HTML5, JSON, and MySQL/MongoDB for data storage.",
+          "Developed and maintained client web applications with PHP and Laravel, turning business requirements into production features.",
+          "Built and customized OpenCart e-commerce stores, integrating third-party APIs such as payment gateways and shipping providers to automate order and transaction workflows.",
+          "Designed database schemas and queries for MySQL- and MongoDB-backed applications, and built responsive JavaScript, HTML and CSS interfaces.",
         ],
-        tech: ["PHP", "Laravel", "HTML5", "JSON", "MySQL", "MongoDB"],
+        tech: ["PHP", "Laravel", "OpenCart", "JavaScript", "HTML5", "CSS3", "MySQL", "MongoDB", "REST APIs"],
       },
     ],
   },
@@ -138,12 +153,12 @@ export type EducationEntry = {
 
 export const education: EducationEntry[] = [
   {
-    school: "Nagpur University",
-    degree: "B.Tech, Mechanical Engineering",
+    school: "Rashtrasant Tukadoji Maharaj Nagpur University (RTMNU)",
+    degree: "B.Tech, Mechanical Engineering (Lateral Entry)",
     period: "2021 — 2024",
   },
   {
-    school: "Maharashtra State Board of Technical Education (MSBTE)",
+    school: "Government Polytechnic, Brahmapuri (MSBTE)",
     degree: "Diploma, Mechanical Engineering",
     period: "2018 — 2021",
   },
@@ -187,10 +202,10 @@ export type Project = {
   repo?: string
 }
 
-// Sourced directly from the public repo (README/notes/source files fetched and confirmed).
+// Kept in sync with the projects listed under Valethi Technologies on the resume.
 export const projects: Project[] = [
   {
-    name: "Chatbot with LangGraph",
+    name: "Multi-Agent AI Chatbot with LangGraph",
     description: "A multi-agent AI chatbot that orchestrates specialized agents through a LangGraph workflow.",
     problem:
       "Handling a complex, multi-part user request (e.g. \"find tourist places in Goa and email me the details\") normally means manually coordinating several separate tools yourself.",
@@ -205,22 +220,63 @@ export const projects: Project[] = [
     ],
     repo: "https://github.com/sachindate2210/LangGraph_with_chatboat",
   },
+  {
+    name: "RAG-Based Document Question Answering Assistant",
+    description: "A Retrieval-Augmented Generation (RAG) assistant that answers questions from an organization's own documents.",
+    problem:
+      "Finding answers inside a large set of internal documents means reading through them manually, and a plain LLM can't answer from private client data.",
+    solution:
+      "Built an end-to-end RAG pipeline — document loading, chunking, embedding generation and indexing in ChromaDB — with semantic vector search and grounding prompts that keep answers tied to the retrieved content.",
+    tech: ["Python", "LangChain", "OpenAI", "ChromaDB", "Embeddings"],
+    features: [
+      "Document ingestion pipeline: loading, chunking, embedding generation and ChromaDB indexing",
+      "Semantic vector search to retrieve the most relevant context",
+      "Grounding prompts that keep answers tied to retrieved content",
+      "Tuned chunking and retrieval parameters for answer relevance",
+    ],
+  },
+  {
+    name: "Text-to-SQL Chatbot for Natural-Language Database Queries",
+    description: "A conversational assistant that lets business users query company data in plain English instead of writing SQL.",
+    problem: "Non-technical business users depend on developers to write SQL every time they need data from the company database.",
+    solution:
+      "Built a text-to-SQL assistant that supplies database schema context to the LLM, generates and executes the query, and summarizes the results in plain language — served through a FastAPI backend and a React chat interface.",
+    tech: ["Python", "FastAPI", "React", "LangChain", "OpenAI", "MySQL", "PostgreSQL"],
+    features: [
+      "Natural-language questions translated into SQL queries",
+      "Database schema context in prompts to improve SQL generation accuracy",
+      "Query results summarized in plain language",
+      "FastAPI REST backend with a React chat frontend",
+    ],
+  },
+  {
+    name: "LLM-Powered Business Automation Workflows",
+    description: "Automation pipelines that apply LLMs to repetitive business tasks and connect the results to existing systems.",
+    problem: "Repetitive business tasks were handled manually across existing client applications.",
+    solution:
+      "Built LLM-powered Python pipelines connected to existing applications through REST APIs, with prompts engineered to return structured, machine-readable JSON for reliable downstream processing.",
+    tech: ["Python", "LangChain", "OpenAI", "REST APIs", "JSON"],
+    features: [
+      "LLM-powered Python automation pipelines",
+      "Integration with existing client applications through REST APIs",
+      "Structured, machine-readable JSON outputs for downstream processing",
+    ],
+  },
 ]
 
-// AI engineering stack — built only from AI/LLM concepts explicitly named in the profile
-// (Summary + Top Skills: LLM, NLP, AI agents, automation).
+// AI engineering stack — mirrors the AI work described on the resume.
 export const aiStack = {
   root: "AI SYSTEMS",
   branches: [
-    { label: "LLMs", children: ["LLM Integration", "Prompting"] },
-    { label: "NLP", children: ["Language Understanding", "Text Processing"] },
-    { label: "Agents", children: ["AI Agents", "Automation Pipelines"] },
+    { label: "LLMs", children: ["OpenAI & Claude APIs", "Prompt Engineering", "Structured Outputs"] },
+    { label: "Retrieval", children: ["RAG Pipelines", "ChromaDB Vector Search", "Text-to-SQL"] },
+    { label: "Agents", children: ["LangGraph Multi-Agent", "Tool Calling", "LangSmith Tracing"] },
   ],
   output: "Production Systems",
 }
 
 export const developerJourney = [
-  { label: "Since", value: "2022", detail: "Professional engineering experience" },
-  { label: "AI focus since", value: "2024", detail: "Dedicated AI/ML & Python engineering" },
-  { label: "Background", value: "Full-Stack → AI", detail: "PHP/Laravel → Python & LLMs" },
+  { label: "Since", value: "2022", detail: "Professional software development experience" },
+  { label: "AI focus since", value: "2023", detail: "AI Engineer / Python Developer since Aug 2023" },
+  { label: "Background", value: "Full-Stack → AI", detail: "Web development → Python, LLMs & agents" },
 ]

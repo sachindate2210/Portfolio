@@ -26,7 +26,7 @@ export function AIStack() {
         <SectionHeading
           eyebrow="// AI Engineering"
           title="AI engineering stack"
-          description="How LLM and NLP capability actually gets integrated into production systems — from language model to shipped feature."
+          description="How LLM, retrieval and agent capability actually gets integrated into production systems — from language model to shipped feature."
         />
 
         <Reveal delay={100}>

@@ -1,8 +1,8 @@
 const CHIPS = [
   { label: "Python", top: "6%", left: "-8%", delay: 0 },
   { label: "LLMs", top: "72%", left: "-12%", delay: 0.6 },
-  { label: "NLP", top: "88%", left: "58%", delay: 1.2 },
-  { label: "React.js", top: "-6%", left: "62%", delay: 1.8 },
+  { label: "LangGraph", top: "88%", left: "58%", delay: 1.2 },
+  { label: "RAG", top: "-6%", left: "62%", delay: 1.8 },
 ]
 
 /** Small tech chips floating around the hero visual — reinforces the AI/engineering identity at a glance. */

@@ -1,4 +1,4 @@
-const STACK = ["AI / LLM", "NLP", "Agents", "Automation", "Python", "Backend", "React.js", "Databases"]
+const STACK = ["LLMs", "RAG", "Multi-Agent", "LangGraph", "Python", "FastAPI", "React", "Databases"]
 
 /** Technical hero visual — a terminal-style card revealing the core stack. Not a stock image. */
 export function TerminalStack() {
