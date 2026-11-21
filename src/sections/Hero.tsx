@@ -6,7 +6,7 @@ import { FloatingChips } from "../components/FloatingChips"
 import { ScrollIndicator } from "../components/ScrollIndicator"
 import { Typewriter } from "../components/Typewriter"
 import { Reveal } from "../components/Reveal"
-import { LinkedinIcon } from "../components/icons"
+import { GithubIcon, LinkedinIcon } from "../components/icons"
 import { heroIntro, personal } from "../data/profile"
 
 const ROLES = ["AI Engineer", "Python Developer", "LLM Integrator", "Automation Builder"]
@@ -76,6 +76,14 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-cyan-500/50"
               >
                 <LinkedinIcon size={16} /> LinkedIn
+              </a>
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-cyan-500/50"
+              >
+                <GithubIcon size={16} /> GitHub
               </a>
             </div>
           </Reveal>
